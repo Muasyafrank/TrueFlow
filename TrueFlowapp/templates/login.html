@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% block title %}Login - TrueFlow Waters{% endblock %}
+{% block content%}
+
+<div class="min-vh-100 d-flex align-items-center" style="background: linear-gradient(to bottom,#eff6ff,white);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <i class="bi bi-droplet-fill text-primary fs-1"></i>
+                            <h2 class="h3 fw-bold text-dark mt-2">Login</h2>
+                        </div>
+                        <form action="">
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" name="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" name="password" id="password" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 py-2">Login</button>
+                        </form>
+                        <div class="text-center mt-4">
+                            <a href="" class="text-decoration-none">Don`t have an account? Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
