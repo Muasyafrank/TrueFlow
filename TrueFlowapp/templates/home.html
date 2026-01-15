@@ -8,7 +8,7 @@
                <i class="bi bi-droplet-fill text-primary fs-3 me-2"></i>
                <span class="fs-4 fw-bold text-primary">TrueFlow Water</span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -16,7 +16,7 @@
                 <li class="nav-item"><a href="#" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="#" class="btn btn-primary">Login</a></li>
+                <li class="nav-item"><a href="{% url 'login' %}" class="btn btn-primary">Login</a></li>
                 
             </ul>
         </div>
@@ -27,7 +27,7 @@
     <div class="text-center mb-5">
         <h1 class="display-4 fw-bold text-dark mb-3">Pure Water,Delivered Fresh</h1>
         <p class="lead text-muted mb-4">Quality water delivery and maintenance services at your doorstep</p>
-        <a href="" class="btn btn-primary btn-lg px-5">Get Started</a>
+        <a href="{% url 'register' %}" class="btn btn-primary btn-lg px-5">Get Started</a>
     </div>
 
     <div class="row g-4">
