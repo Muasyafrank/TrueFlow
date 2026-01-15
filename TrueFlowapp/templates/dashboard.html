@@ -5,7 +5,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
     <div class="container">
-        <a href="" class="navbar-brand d-flex align-items-center">
+        <a href="{% url 'dashboard' %}" class="navbar-brand d-flex align-items-center">
              <i class="bi bi-droplet-fill text-primary fs-1"></i>
              <span class="fs-4 fw-bold text-primary">DashBoard</span>
         </a>
@@ -15,8 +15,7 @@
         <div class="collapse navbar-collapse" id="navBar" >
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a href="" class="nav-link active">DashBoard</a></li>
-                <li class="nav-item"><a href="" class="nav-link active">Buy Water</a></li>
-                <li class="nav-item"><a href="" class="nav-link active">Orders</a></li>
+                <li class="nav-item"><a href="" class="nav-link active">Our Products</a></li>
                 <li class="nav-item"><a href="" class="nav-link active">Services</a></li>
                 <li class="nav-item">
                     <a href="{% url 'logout' %}" class="nav-link text-danger">
@@ -29,7 +28,7 @@
 </nav>
 
 <div class="container py-5">
-    <h2 class="mb-2">Welcome <span></span>!</h2>
+    <h2 class="mb-2">Welcome <span>{{ user.username }}</span>!</h2>
     <p class="text-muted mb-4">Manage your water orders and services</p>
 
     <div class="row g-4 mb-5">
@@ -40,7 +39,7 @@
                         <h5 class="card-title mb-0">Total Orders</h5>
                         <i class="bi bi-box text-primary fs-4"></i>
                     </div>
-                    <p class="display-6 fw-bold text-primary">0</p>
+                    <p class="display-6 fw-bold text-primary">{{ total_orders}}</p>
                 </div>
             </div>
         </div>
@@ -53,7 +52,7 @@
                         <h5 class="card-title mb-0">Pending Orders</h5>
                         <i class="bi bi-cart text-warning fs-4"></i>
                     </div>
-                    <p class="display-6 fw-bold text-warning">0</p>
+                    <p class="display-6 fw-bold text-warning">{{ pending_orders }}</p>
                 </div>
             </div>
         </div>
@@ -75,9 +74,47 @@
             <div class="card border-0 shadow-sm">
                 <div class="card-body">
                     <h5 class="card-title mb-4">Recent Orders</h5>
-                    <div class="">
-                        <p class="text-muted">No Orders Yet</p>
+                    {% if recent_orders %}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in recent_orders %}
+                                <tr>
+                                    <td>{{ order.id }}</td>
+                                    <td>{{ order.quantity }}L</td>
+                                    <td>KES {{ order.total_price }}</td>
+                                    <td>
+                                        <span class="badge
+                                        {% if order.status == 'pending' %} bg-warning 
+                                        {% elif order.status == 'delivered' %} bg-success 
+                                        {% elif order.status == 'canceled' %} bg-danger 
+                                        {% else %} bg-secondary 
+                                        {% endif %}
+                                        
+                                        ">{{ order.get_status_display }}</span>
+                                    </td>
+                                    <td class="text-muted small">{{ order.order_date|date:"d M Y" }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
                     </div>
+                    {% else %}
+                    <div class="text-center py-4">
+                            <i class="bi bi-inbox text-muted" style="font-size: 3rem;"></i>
+                            <p class="text-muted mt-3">No orders yet</p>
+                            <a href="{% url 'place-order' %}" class="btn btn-primary">Place Your First Order</a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -86,7 +123,7 @@
                 <div class="card-body">
                     <h5 class="card-title mb-4">Quick Actions</h5>
                     <div class="d-grid gap-3">
-                        <a href="" class="btn btn-primary btn-lg">
+                        <a href="{% url 'buy-water' %}" class="btn btn-primary btn-lg">
                             <i class="bi bi-cart me-2"></i> Order Water
                         </a>
                          <a href="" class="btn btn-primary btn-lg">

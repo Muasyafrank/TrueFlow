@@ -20,12 +20,16 @@ from TrueFlowapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',views.home,name='home'),
+    path('',views.home,name='home'),
     path('login/',views.login_user,name='login'),
     path('register/',views.register,name='register'),
     path('dashboard/',views.dashboard,name='dashboard'),
     path('admin-dashboard/',views.admin,name='admin-dashboard'),
-    path('logout/',views.logout_user,name='logout')
+    path('logout/',views.logout_user,name='logout'),
+    path('buy-water/',views.buyWater,name='buy-water'),
+    path('place-order/',views.place_order,name='place-order'),
+
+    
 
 
 ]
