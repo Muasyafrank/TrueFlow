@@ -5,62 +5,79 @@
 <nav class="navbar navbar-expand-lg  navbar-light bg-white shadow-sm">
     <div class="container">
         <a href="#" class="navbar-brand d-flex align-items-center" >
-               <i class="bi bi-droplet-fill text-primary fs-3 me-2"></i>
-               <span class="fs-4 fw-bold text-primary">TrueFlow Water</span>
+               
+               <span class="fs-3 fw-bold text-primary">Citystar Water Solutions</span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+       
+        
+            <div class="">
+                <ul class="navbar-nav ms-auto d-flex flex-row">
+                <li class="nav-item"><a href="{% url 'register' %}" class="btn btn-outline-primary me-2">Sign Up</a></li>
                 <li class="nav-item"><a href="{% url 'login' %}" class="btn btn-primary">Login</a></li>
                 
             </ul>
-        </div>
+            </div>
+        
     </div>
 </nav>
 
-<div class="container py-5">
-    <div class="text-center mb-5">
-        <h1 class="display-4 fw-bold text-dark mb-3">Pure Water,Delivered Fresh</h1>
-        <p class="lead text-muted mb-4">Quality water delivery and maintenance services at your doorstep</p>
-        <a href="{% url 'register' %}" class="btn btn-primary btn-lg px-5">Get Started</a>
-    </div>
-
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body text-center p-4">
-                 <i class="bi bi-droplet-fill text-primary fs-1 mb-3"></i>
-                 <h3 class="card-title h5 fw-bold">Fresh Water</h3>
-                 <p class="card-text text-muted">Premium Quality drinking water delivered daily</p>   
+<div class="bg-primary text-white py-5" style="background: linear-gradient(135deg,#0d6efd 0%,#0a58ca 100%);">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-3 fw-bold mb-4">Citystar Water Solutions</h1>
+                <p class="lead mb-4">Your trusted partner fo premium water treatment solutions and bottling equipment since 2024</p>
+                <div class="d-flex gap-3">
+                    <a href='' class="btn btn-light btn-lg px-4"><i class="bi bi-box-seam me-2"></i>Our Products</a>
+                    <a href='' class="btn btn-light btn-lg px-4"><i class="bi bi-tools me-2"></i>Our Services</a>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body text-center p-4">
-                <i class="bi bi-tools text-primary fs-1 mb-3"></i>  
-                <h3 class="card-title h5 fw-bold">Expert Services</h3>
-                <p class="card-text text-muted">Professional plumbing and maintenance</p>
-                </div>
+            <div class="col-lg-6 text-center">
+                <i class="bi bi-droplet-fill" style="font-size: 15rem; opacity: 0.2;"></i>
             </div>
-
-        </div>
-
-        <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body text-center p-4">
-                    <i class="bi bi-cart-check-fill text-primary fs-1 mb-3"></i>
-                    <h3 class="card-title h5 fw-bold">Easy Orderings</h3>
-                    <p>Order Online with just a few clicks</p>
-                </div>
-            </div>            
         </div>
     </div>
 </div>
+
+<div class="container py-5">
+    <h2 class="text-center mb-5 fw-bold">Our Core Values</h2>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-start mb-3">
+                        <i class="bi bi-shield-check text-primary fs-1 me-3"></i>
+                    </div>
+                    <h4 class="fw-bold">Integrity and Primacy of a Person</h4>
+                    <p class="text-muted">We are a company of professional ethics, unique rules and individual contibutions towards corporate goals that provide us with concrete opportunities to character and purpose in our lives</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-start mb-3">
+                        <i class="bi bi-trophy text-warning fs-1 me-3"></i>
+                    </div>
+                    <h4 class="fw-bold">Pride in Excellence</h4>
+                    <p class="text-muted">We strive for excellence because turning out the highest quality products and services is the fitting tribute to our customers, our society company colleagues and ourselves</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+             <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-start mb-3">
+                        <i class="bi bi-people-fill text-success fs-1 me-3"></i>
+                    </div>
+                    <h4 class="fw-bold">Concern for Others</h4>
+                    <p class="text-muted">We believe that contributing to social development through the community we serve and the natural environment that we help protect is the very essence of our corporate existence</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 {% endblock%}

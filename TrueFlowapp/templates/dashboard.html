@@ -15,8 +15,11 @@
         <div class="collapse navbar-collapse" id="navBar" >
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a href="" class="nav-link active">DashBoard</a></li>
-                <li class="nav-item"><a href="" class="nav-link active">Our Products</a></li>
+                <li class="nav-item"><a href="" class="nav-link active">Order Water</a></li>
+                <li class="nav-item"><a href="" class="nav-link active">Products</a></li>
                 <li class="nav-item"><a href="" class="nav-link active">Services</a></li>
+                <li class="nav-item"><a href="" class="nav-link active">Gallery</a></li>
+
                 <li class="nav-item">
                     <a href="{% url 'logout' %}" class="nav-link text-danger">
                         <i class="bi bi-box-arrow-right me-1"></i>Logout
@@ -112,7 +115,7 @@
                     <div class="text-center py-4">
                             <i class="bi bi-inbox text-muted" style="font-size: 3rem;"></i>
                             <p class="text-muted mt-3">No orders yet</p>
-                            <a href="{% url 'place-order' %}" class="btn btn-primary">Place Your First Order</a>
+                            <a href='' class="btn btn-primary">Place Your First Order</a>
                     </div>
                     {% endif %}
                 </div>
@@ -123,7 +126,7 @@
                 <div class="card-body">
                     <h5 class="card-title mb-4">Quick Actions</h5>
                     <div class="d-grid gap-3">
-                        <a href="{% url 'buy-water' %}" class="btn btn-primary btn-lg">
+                        <a href="" class="btn btn-primary btn-lg">
                             <i class="bi bi-cart me-2"></i> Order Water
                         </a>
                          <a href="" class="btn btn-primary btn-lg">

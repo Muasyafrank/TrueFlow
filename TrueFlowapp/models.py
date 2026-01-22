@@ -1,8 +1,10 @@
 from decimal import Decimal
 from django.db import models
-from django.contrib.auth.models  import User
+from django.contrib.auth.models  import User,AbstractUser
 
 # Create your models here.
+class CustomUser(AbstractUser):
+    phone_number = models.CharField(max_length=15,blank=True)
 class WaterOrder(models.Model):
     STATUS_CHOICES = [
         ('pending','Pending'),
@@ -11,7 +13,7 @@ class WaterOrder(models.Model):
         ('cancelled','Cancelled')
     ]
 
-    user = models.ForeignKey(User,on_delete=models.CASCADE,related_name='water_orders')
+    user = models.ForeignKey(CustomUser,on_delete=models.CASCADE,related_name='water_orders')
     quantity = models.PositiveIntegerField(help_text="Water quantity in Litres")
     phone = models.CharField(max_length=20)
     delivery_address = models.TextField()
@@ -35,6 +37,7 @@ class WaterOrder(models.Model):
     
     class Meta:
         ordering = ['-order_date']
+
 
 
 

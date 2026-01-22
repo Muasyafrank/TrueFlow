@@ -25,11 +25,7 @@ urlpatterns = [
     path('register/',views.register,name='register'),
     path('dashboard/',views.dashboard,name='dashboard'),
     path('admin-dashboard/',views.admin,name='admin-dashboard'),
-    path('logout/',views.logout_user,name='logout'),
-    path('buy-water/',views.buyWater,name='buy-water'),
-    path('place-order/',views.place_order,name='place-order'),
-
-    
+    path('logout/',views.logout_user,name='logout'),   
 
 
 ]
